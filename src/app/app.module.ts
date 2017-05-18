@@ -1,33 +1,46 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { ErrorHandler, NgModule } from '@angular/core';
-import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
-import { SplashScreen } from '@ionic-native/splash-screen';
-import { StatusBar } from '@ionic-native/status-bar';
+import {BrowserModule} from "@angular/platform-browser";
+import {ErrorHandler, NgModule} from "@angular/core";
+import {IonicApp, IonicErrorHandler, IonicModule} from "ionic-angular";
+import {SplashScreen} from "@ionic-native/splash-screen";
+import {StatusBar} from "@ionic-native/status-bar";
 
-import { MyApp } from './app.component';
+import {MyApp} from "./app.component";
 import {ListsPage} from "../pages/lists/lists";
 import {ListPage} from "../pages/list/list";
+import {ListCreatePage} from "../pages/list-create/list-create";
+import {ListUpdatePage} from "../pages/list-update/list-update";
+import {ItemCreatePage} from "../pages/item-create/item-create";
+import {ItemUpdatePage} from "../pages/item-update/item-update";
 
 @NgModule({
-  declarations: [
-    MyApp,
-    ListsPage,
-    ListPage
-  ],
-  imports: [
-    BrowserModule,
-    IonicModule.forRoot(MyApp)
-  ],
-  bootstrap: [IonicApp],
-  entryComponents: [
-    MyApp,
-    ListsPage,
-    ListPage
-  ],
-  providers: [
-    StatusBar,
-    SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
-  ]
+    declarations: [
+        MyApp,
+        ListsPage,
+        ListPage,
+        ListCreatePage,
+        ListUpdatePage,
+        ItemCreatePage,
+        ItemUpdatePage
+    ],
+    imports: [
+        BrowserModule,
+        IonicModule.forRoot(MyApp)
+    ],
+    bootstrap: [IonicApp],
+    entryComponents: [
+        MyApp,
+        ListsPage,
+        ListPage,
+        ListCreatePage,
+        ListUpdatePage,
+        ItemCreatePage,
+        ItemUpdatePage
+    ],
+    providers: [
+        StatusBar,
+        SplashScreen,
+        {provide: ErrorHandler, useClass: IonicErrorHandler}
+    ]
 })
-export class AppModule {}
+export class AppModule {
+}

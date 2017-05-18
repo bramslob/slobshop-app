@@ -1,0 +1,16 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Jouw lijsten</ion-title>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+    <ion-list>
+        <ion-item-sliding>
+            <ion-item *ngFor="let item of list" [navPush]="pushPage" [navParams]="{id: item.id}">
+                {{ item.name }}
+            </ion-item>
+        </ion-item-sliding>
+    </ion-list>
+</ion-content>

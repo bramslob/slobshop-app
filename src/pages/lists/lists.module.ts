@@ -14,5 +14,4 @@ import {ListsPage} from "./lists";
     ]
 })
 export class ListsPageModule {
-
 }

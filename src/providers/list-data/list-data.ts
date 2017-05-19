@@ -1,16 +1,29 @@
 import {Injectable} from "@angular/core";
+import {Storage} from "@ionic/storage";
 
 @Injectable()
 export class ListDataProvider {
 
-    public message: any = "I'm new here";
+    public lists: any = [];
 
-    constructor() {
+    constructor(private storage: Storage) {
+        this.storage.get('lists').then((val) => {
+            if (val === null) {
+                this.makeEmptyList();
+            }
+        });
 
     }
 
-    setMessage(message) {
-        this.message = message;
+    makeEmptyList() {
+        this.storage.set('lists', []);
+
+        return [];
     }
 
+    overview() {
+        this.storage.get('lists').then((val) => {
+            this.lists = val;
+        });
+    }
 }

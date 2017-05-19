@@ -20,12 +20,13 @@ import {ListDataProvider} from "../../providers/list-data/list-data";
 export class ListsPage {
 
     pushPage: any;
-    list: [any] = [
-        {i: 1, name: 'list 1', checked: false}
-    ];
 
     constructor(public navCtrl: NavController, public navParams: NavParams, public listDataService: ListDataProvider) {
         this.pushPage = ListPage;
+    }
+
+    ionViewDidLoad() {
+        this.listDataService.overview();
     }
 
 }

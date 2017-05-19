@@ -1,7 +1,9 @@
 import {Component} from "@angular/core";
 import {IonicPage, NavController, NavParams} from "ionic-angular";
-import {ListPage} from "../list/list";
 import {ListDataProvider} from "../../providers/list-data/list-data";
+import {ListPage} from "../list/list";
+import {ListCreatePage} from "../list-create/list-create";
+import {ListUpdatePage} from "../list-update/list-update";
 
 /**
  * Generated class for the ListsPage page.
@@ -19,10 +21,14 @@ import {ListDataProvider} from "../../providers/list-data/list-data";
 })
 export class ListsPage {
 
-    pushPage: any;
+    detailPage: any;
+    createPage: any;
+    editPage: any;
 
     constructor(public navCtrl: NavController, public navParams: NavParams, public listDataService: ListDataProvider) {
-        this.pushPage = ListPage;
+        this.detailPage = ListPage;
+        this.createPage = ListCreatePage;
+        this.editPage = ListUpdatePage;
     }
 
     ionViewDidLoad() {

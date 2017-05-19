@@ -1,5 +1,6 @@
 import {Component} from "@angular/core";
 import {IonicPage, NavController, NavParams} from "ionic-angular";
+import {ListDataProvider} from "../../providers/list-data/list-data";
 
 /**
  * Generated class for the ListCreatePage page.
@@ -17,11 +18,19 @@ import {IonicPage, NavController, NavParams} from "ionic-angular";
 })
 export class ListCreatePage {
 
-    constructor(public navCtrl: NavController, public navParams: NavParams) {
+    list = {};
+
+    constructor(public navCtrl: NavController, public navParams: NavParams, public listDataService: ListDataProvider) {
     }
 
-    ionViewDidLoad() {
-        console.log('ionViewDidLoad ListCreatePage');
-    }
+    submit() {
+        if (this.list === {}) {
+            return;
+        }
 
+        this.listDataService.add(this.list).then((val) => {
+            console.log(val);
+            // this.navCtrl.push('list', ['id' => '']);
+        });
+    }
 }

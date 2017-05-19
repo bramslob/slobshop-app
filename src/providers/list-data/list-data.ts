@@ -26,4 +26,12 @@ export class ListDataProvider {
             this.lists = val;
         });
     }
+
+    add(list) {
+        console.log(list);
+        return this.storage.get('lists').then((current_lists) => {
+            current_lists.push(list);
+            return this.storage.set('lists', current_lists);
+        })
+    }
 }

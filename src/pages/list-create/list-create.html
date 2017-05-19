@@ -6,13 +6,21 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>list-create</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>Nieuwe lijst maken</ion-title>
+    </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+
+    <form (ngSubmit)="submit()">
+        <ion-item>
+            <ion-label color="primary" floating>Name</ion-label>
+            <ion-input type="text" [(ngModel)]="list.name" name="name"></ion-input>
+        </ion-item>
+        <button ion-button type="submit">Opslaan</button>
+    </form>
 
 </ion-content>

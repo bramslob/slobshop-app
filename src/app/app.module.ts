@@ -11,6 +11,7 @@ import {ListCreatePage} from "../pages/list-create/list-create";
 import {ListUpdatePage} from "../pages/list-update/list-update";
 import {ItemCreatePage} from "../pages/item-create/item-create";
 import {ItemUpdatePage} from "../pages/item-update/item-update";
+import {ListDataProvider} from "../providers/list-data/list-data";
 
 @NgModule({
     declarations: [
@@ -39,7 +40,8 @@ import {ItemUpdatePage} from "../pages/item-update/item-update";
     providers: [
         StatusBar,
         SplashScreen,
-        {provide: ErrorHandler, useClass: IonicErrorHandler}
+        {provide: ErrorHandler, useClass: IonicErrorHandler},
+        ListDataProvider
     ]
 })
 export class AppModule {

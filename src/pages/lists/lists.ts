@@ -1,6 +1,7 @@
 import {Component} from "@angular/core";
 import {IonicPage, NavController, NavParams} from "ionic-angular";
 import {ListPage} from "../list/list";
+import {ListDataProvider} from "../../providers/list-data/list-data";
 
 /**
  * Generated class for the ListsPage page.
@@ -23,7 +24,7 @@ export class ListsPage {
         {i: 1, name: 'list 1', checked: false}
     ];
 
-    constructor(public navCtrl: NavController, public navParams: NavParams) {
+    constructor(public navCtrl: NavController, public navParams: NavParams, public listDataService: ListDataProvider) {
         this.pushPage = ListPage;
     }
 
